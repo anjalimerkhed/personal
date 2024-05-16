@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/global.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Login</title>
+</head>
+
+<body>
+
+    <h2 id="lif">Login Form</h2>
+    <div id="m">{{ msg }}</div>
+    <form action="/login" method="post" novalidate>
+
+        <div class="container">
+
+            <label for="email"><b>Email</b></label>
+            <input type="email" placeholder="Enter Email" name="email" autocomplete="off">
+
+            <label for="password"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="password" autocomplete="off">
+
+            <button type="login">Login</button>
+            <br><br>
+            
+            <span class="vl-innertext">or</span><hr>
+
+            <div id="line">
+                <a href="/sign_up" type="button" class="btn text-center btn-info btn-lg">Create New Account</a>
+            </div>
+
+
+        </div>
+    </form>
+
+</body>
+
+</html>

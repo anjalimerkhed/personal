@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../static/css/global.css" />
+  <script type="text/javascript" src="../static/js/validation.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css" />
+  <title>Sign_Up_Form</title>
+</head>
+
+<body>
+  <!-- {% for row in countries %}
+  {{row[1]}}
+  {% endfor %}
+
+  {{country_len}} -->
+
+  <form method="post" action="/" name="form" class="dropdown-group" onsubmit="return validateForm()" novalidate>
+    <div class="container" class="form-group row">
+      <h1>Sign Up</h1>
+      {% if msg %}
+      <div id="error">{{msg}}</div>
+      {% endif %}
+      <!-- <div id="error" class="alert-danger" role="alert">
+        {% if errors %}
+          {% for error in errors %}
+            {{error}}<br>
+          {% endfor %}
+        {% endif %}
+      </div> -->
+      <br>
+
+      <label for="name"><b>Name</b></label>
+      {% if 'name' in errors %}
+      <div id="error">{{ errors['name'] }}</div>
+      {% endif %}
+      <input type="text" id="name" placeholder="Enter Name" name="name" value="{{name}}" autocomplete="off">
+      <br>
+
+      <label for="email"><b>Email</b></label>
+      {% if 'email' in errors %}
+      <div id="error">{{ errors['email'] }}</div>
+      {% endif %}
+      <input type="email" id="email" placeholder="Enter Email" name="email" value="{{email}}" autocomplete="off">
+      <br>
+
+      <label for="phoneno"><b>Phone No.</b></label>
+      {% if 'phoneno' in errors %}
+      <div id="error">{{ errors['phoneno'] }}</div>
+      {% endif %}
+      <input type="number" id="phoneno" placeholder="Phone no." name="phoneno" value="{{phoneno}}" autocomplete="off">
+      <br>
+
+      <label for="password"><b>Password:</b></label>
+      {% if 'password' in errors %}
+      <div id="error">{{ errors['password'] }}</div>
+      {% endif %}
+      <input type="password" id="password" placeholder="Enter Password" name="password" value="{{password}}"
+        autocomplete="off"><i class="far fa-eye" id="togglePassword" style="margin-left: -30px; cursor: pointer;"></i>
+
+      <br>
+      <div class="row">
+        <div class="col-md-6">
+          <label for="country"><b>Country:</b></label>
+          {% if 'country_name' in errors %}
+          <div id="error">{{ errors['country_name'] }}</div>
+          {% endif %}
+          <select name='country_name' data-live-search="true" id="country_name" class="form-control"
+            title="Select Country">
+            <option value="" selected="selected">Select Country</option>
+            {% if country_len is defined and country_len is number %}
+            {% for row in range(0, country_len) %}
+            <option value='{{countries[row][1]}}'>{{countries[row][1]}}</option>
+            {% endfor %}
+            {% endif %}
+          </select>
+          <br>
+
+        </div>
+        <div class="col-md-6">
+          <label for="state"><b>State:</b></label>
+          {% if 'state_name' in errors %}
+          <div id="error">{{ errors['state_name'] }}</div>
+          {% endif %}
+          <select name="state_name" data-live-search="true" id="state_name" class="form-control" title="Select State">
+            <option value="" selected="selected">Select State</option>
+          </select>
+        </div>
+      </div>
+      <br>
+
+      <div class="clearfix">
+        <button type="submit">Submit</button>
+      </div>
+
+    </div>
+
+  </form>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
+<script type="text/javascript">
+  const togglePassword = document.querySelector('#togglePassword');
+  const password = document.querySelector('#password');
+
+  togglePassword.addEventListener('click', function (e) {
+    // toggle the type attribute 
+    const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+    password.setAttribute('type', type);
+    // toggle the eye slash icon
+    this.classList.toggle('fa-eye-slash');
+  });
+
+  $(document).ready(function () {
+    $("#country_name").selectpicker();
+
+    $("#state_name").selectpicker();
+
+    function load_data(type, category_id) {
+      $.ajax({
+        url: "/country",
+        method: "POST",
+        data: { type: type, category_id: category_id },
+        dataType: "json",
+        success: function (data) { //alert(category_id)
+          var html = "";
+          for (var count = 0; count < data.length; count++) {
+            html += '<option value="' + data[count].name + '">' + data[count].name + "</option>";
+          }
+          if (type == "countryData") {
+            $("#country_name").html(html);
+            $("#country_name").selectpicker("refresh");
+          } else {
+            $("#state_name").html(html);
+            $("#state_name").selectpicker("refresh");
+          }
+        },
+      });
+    }
+
+    $(document).on("change", "#country_name", function () {
+      var category_id = $("#country_name").val();
+      load_data("statedata", category_id);
+    });
+  });
+</script>
+
+
+</html>

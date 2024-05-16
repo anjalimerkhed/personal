@@ -1,0 +1,224 @@
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box}
+h1{
+  color: black;
+  text-align: center;
+}
+h2{
+  color: #04AA6D;
+  text-align: center;
+}
+#lif{
+  color: black;
+  text-align: center;
+  padding-top: 30px;
+  font-family:  "Times New Roman", Times, serif;
+  font-weight: 700;
+}
+/* Full-width input fields */
+input[type=text], input[type=text] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+input[type=email], input[type=email] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+input[type=number], input[type=number] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+input[type=password], input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+/* Set a style for all buttons */
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+button:hover {
+  opacity:1;
+}
+/* Add padding to container elements */
+.container {
+  padding: 16px;
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+}
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  text-align: center;
+}
+.test{
+  height:50px;
+  width:50px;
+}
+#txt{
+ text-align: center;
+}
+table.center {
+  margin-top: 50px;
+  margin-left: auto; 
+  margin-right: auto;
+}
+#error{
+  padding-left: 15px;
+  color: red;
+}
+#m{
+  padding-left: 15px;
+  color: red;
+  margin-left: 380px;
+}
+#btn{
+  margin-left: 900px;
+}
+.logo{
+  width: 25px;
+  height: 25px;
+  position: fixed;
+  top: 15px;
+  float: right;
+  right: 153px;
+}
+.dropdown {
+  display: inline;
+  position: absolute;
+  float: right;
+  right: 80px;
+}
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: black;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+nav{
+  float: right;
+}
+.dropdown-options {
+  display: none;
+  position: absolute;
+  overflow: auto;
+}
+.dropdown:hover .dropdown-options {
+  display: block;
+}
+#country{
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+#state{
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* Add_device */
+#device_name{
+  width: 100%;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+#device_type{
+  width: 100%;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+#capacity{
+  width: 100%;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+#brand{
+  width: 100%;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+#permission{
+  width: 100%;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+#star{
+  width: 100%;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+#line
+{
+  text-align: center;
+}
+.vl-innertext {
+  position: absolute;
+  top: 400px;
+  left: 950px; 
+  transform: translate(-50%, -50%);
+  background-color: rgb(233, 95, 95);
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  padding: 8px 10px;
+}
+#menu {
+  width: 25px;
+  height: 3px;
+  background-color: black;
+  margin: 3px 0;
+}
+
+
+  

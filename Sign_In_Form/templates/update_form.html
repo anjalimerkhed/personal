@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../static/css/global.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css" />
+  <title>Update_Document</title>
+</head>
+
+<body>
+  <!-- {{id}} -->
+  <form method="post" action="/update/{{id}}" name="form" novalidate>
+    <div class="container">
+      <h1>Update Information</h1>
+      {% for row in rows %}
+      <input type="hidden" name="id" value="{{row.0}}" autocomplete="off">
+
+      <label for="name"><b>Name</b></label>
+      <input type="text" name="name" value="{{row.1}}" autocomplete="off">
+      <br>
+
+      <label for="email"><b>Email</b></label>
+      <input type="email" name="email" value="{{row.2}}" autocomplete="off">
+      <br>
+
+      <label for="phoneno"><b>Phone No.</b></label>
+      <input type="number" name="phoneno" value="{{row.3}}" autocomplete="off">
+      <br>
+
+
+      <div class="row">
+        <div class="col-md-6">
+          <label for="country"><b>Country: </b></label> {{row.5}}
+          <select name='country_name' data-live-search="true" id="country_name" class="form-control"
+            title="Select Country">
+            <option value="" selected="selected">Select Country</option>
+            {% if country_len is defined and country_len is number %}
+             {% for row in range(0, country_len) %}
+               <option value='{{countries[row][0]}}'>{{countries[row][1]}}</option>
+             {% endfor %}
+            {% endif %}
+          </select>
+          <br>
+        </div>
+        <div class="col-md-6">
+          <label for="state"><b>State: </b></label> {{row.6}}
+          <select name="state_name" data-live-search="true" id="state_name" class="form-control" title="Select State">
+            <option value="" selected="selected">Select State</option>
+          </select>
+        </div>
+      </div>
+      <br>
+
+      {% endfor %}
+
+      <div class="clearfix">
+        <button type="submit">Update</button>
+      </div>
+
+    </div>
+  </form>
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
+<script type="text/javascript">
+  $(document).ready(function () {
+    $("#country_name").selectpicker();
+
+    $("#state_name").selectpicker();
+
+    function load_data(type, category_id) {
+      $.ajax({
+        url: "/country",
+        method: "POST",
+        data: { type: type, category_id: category_id },
+        dataType: "json",
+        success: function (data) { //alert(category_id)
+          var html = "";
+          for (var count = 0; count < data.length; count++) {
+            html += '<option value="' + data[count].name + '">' + data[count].name + "</option>";
+          }
+          if (type == "countryData") {
+            $("#country_name").html(html);
+            $("#country_name").selectpicker("refresh");
+          } else {
+            $("#state_name").html(html);
+            $("#state_name").selectpicker("refresh");
+          }
+        },
+      });
+    }
+
+    $(document).on("change", "#country_name", function () {
+      var category_id = $("#country_name").val();
+      load_data("statedata", category_id);
+    });
+  });
+</script>
+
+
+</html>

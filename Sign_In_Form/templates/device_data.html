@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/global.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Devices</title>
+</head>
+<body>
+    <h2 class="alert alert-success" role="alert">Thank you for adding the devices!!!</h2>
+    <table style="width:75%"  class="table table-striped center table-bordered">
+        <tr>
+          <th id="txt">Sr.No.</th>
+          <th id="txt">User Id</th>
+          <th id="txt">Device Name</th>
+          <th id="txt">Device Type</th>
+          <th id="txt">Capacity</th>
+          <th id="txt">Brand</th>
+          <th id="txt">Permission</th>
+          <th id="txt">Star</th>
+          <th id="txt">Serial Number</th>
+        </tr>
+        {% for row in rows %}
+        <tr>
+          <td>{{ row.0 }}</td>
+          <td>{{ row.1 }}</td>
+          <td>{{ row.2 }}</td>
+          <td>{{ row.3 }}</td>
+          <td>{{ row.4 }}</td>
+          <td>{{ row.5 }}</td>
+          <td>{{ row.6 }}</td>
+          <td>{{ row.7 }}</td>
+          <td>{{ row.8 }}</td>
+         </tr>
+        {% endfor %}
+</body>
+</html>

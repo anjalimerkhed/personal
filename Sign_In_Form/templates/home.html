@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="../static/css/global.css" />
+  <script type="text/javascript" src="../static/js/validation.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css" />
+    <title>Home_Page</title>
+</head>
+<body>
+
+    <div class="alert alert-success">{{ msg }}
+
+      <img src="../static/img/user.png" class="logo">
+         
+        <div class="dropdown">
+            <nav>
+                <a className="dropbtn">{{username}}</a> 
+                <div class="dropdown-options">
+                    <a href="">Dashboard</a>
+                    <a href="">Setting</a>
+                    <a href="{{ url_for('logout') }}">Logout</a>
+                </div>
+            </nav>
+            
+        </div>
+
+    </div>
+
+    <div id="menu"></div>
+    <div id="menu"></div>
+    <div id="menu"></div>
+
+
+    <H1><strong><i>Welcome {{username}} !!!</i></strong></H1>
+    
+    <!-- <a href="/add_device" id="btn" type="button" class="btn text-center btn-info btn-lg">Add Device</a> -->
+    <form method="post" action="/add_device" name="form" novalidate>
+        <div class="container">
+          <h1 id="lif">Device Information</h1>
+    
+          <input type="hidden" name="id" autocomplete="off">
+    
+          <div class="row">
+    
+            <label for="device_name"><b>Device Type:</b></label>
+            <select name="device_name" data-live-search="true" id="device_name" class="form-control" title="Select Type">
+              <option value="" selected="selected">Select Type</option>
+              {% for row in range(0, device_len) %}
+              <option value='{{device[row][0]}}'>{{device[row][1]}}</option>
+              {% endfor %}
+            </select>
+            <br><br> 
+    
+            <label for="device_type"><b>Device Sub-Type:</b></label>
+            <select name="device_type" data-live-search="true" id="device_type" class="form-control"
+              title="Select Sub-Type">
+              <option value="" selected="selected">Select Sub-Type</option>
+            </select>
+            <br><br> 
+    
+            <label for="capacity"><b>Device Capacity:</b></label>
+            <select name="capacity" data-live-search="true" id="capacity" class="form-control" title="Select Capacity">
+              <option value="" selected="selected">Select Capacity</option>
+            </select>
+            <br><br> 
+    
+            <label for="brand"><b>Device Brand:</b></label>
+            <select name="brand" data-live-search="true" id="brand" class="form-control" title="Select Brand">
+              <option value="" selected="selected">Select Brand</option>
+              {% for row in range(0, b_len) %}
+              <option value='{{b_name[row][1]}}'>{{b_name[row][1]}}</option>
+              {% endfor %}
+            </select>
+            <br>
+    
+            <label for="permission"><b>Device Permission:</b></label>
+            <select name="permission" data-live-search="true" id="permission" class="form-control"
+              title="Select Permission">
+              <option value="" selected="selected">Select Permission</option>
+              {% for row in range(0, p_len) %}
+              <option value='{{per[row][1]}}'>{{per[row][1]}}</option>
+              {% endfor %}
+            </select>
+            <br>
+    
+    
+            <label for="star"><b>Power Consumption:</b></label>
+            <select name="star" data-live-search="true" id="star" class="form-control" title="Select Star">
+              <option value="" selected="selected">Select Star</option>
+              {% for row in range(0, r_len) %}
+              <option value='{{rate[row][1]}}'>{{rate[row][1]}}</option>
+              {% endfor %}
+            </select>
+            <br>
+    
+            <div class="clearfix">
+              <button type="submit">Add</button>
+            </div>
+    
+          </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
+<script>
+  $(document).ready(function () {
+    $("#device_name").selectpicker();
+
+    $("#device_type").selectpicker();
+
+    function load_data(type, category_id) {
+      $.ajax({
+        url: "/get_subtype_options",
+        method: "POST",
+        data: { type: type, category_id: category_id },
+        dataType: "json",
+        success: function (data) { //alert(category_id)
+          var html = "";
+          for (var count = 0; count < data.length; count++) {
+            html += '<option value="' + data[count].name + '">' + data[count].name + "</option>";
+          }
+          if (type == "deviceData") {
+            $("#device_name").html(html);
+            $("#device_name").selectpicker("refresh");
+          } else {
+            $("#device_type").html(html);
+            $("#device_type").selectpicker("refresh");
+          }
+        },
+      });
+    }
+
+    $(document).on("change", "#device_name", function () {
+      var category_id = $("#device_name").val();
+      load_data("subtypedata", category_id);
+    });
+  });
+
+  $(document).ready(function () {
+    $("#device_name").selectpicker();
+
+    $("#capacity").selectpicker();
+
+    function load_data(type, category_id) {
+      $.ajax({
+        url: "/get_capacity_options",
+        method: "POST",
+        data: { type: type, category_id: category_id },
+        dataType: "json",
+        success: function (data) { //alert(category_id)
+          var html = "";
+          for (var count = 0; count < data.length; count++) {
+            html += '<option value="' + data[count].name + '">' + data[count].name + "</option>";
+          }
+          if (type == "deviceData") {
+            $("#device_name").html(html);
+            $("#device_name").selectpicker("refresh");
+          } else {
+            $("#capacity").html(html);
+            $("#capacity").selectpicker("refresh");
+          }
+        },
+      });
+    }
+
+    $(document).on("change", "#device_name", function () {
+      var category_id = $("#device_name").val();
+      load_data("capacitydata", category_id);
+    });
+  });
+</script>
+</html>
