@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delete_Device</title>
+  <link rel="stylesheet" href="../static/css/global.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+  <a href="/home"> <img src="{{img}}" style="height: 100px;"></a>
+
+  <h2 class="text-center text-warning">Delete Device</h2>
+  <table style="width:15%" class="table table-striped center table-bordered">
+    <tr>
+      <th id="txt">User ID</th>
+      <th id="txt">Sr. No.</th>
+      <th id="txt">Device Name</th>
+      <th id="txt">Action</th>
+    </tr>
+
+    {% for row in new %}
+    <tr>
+      <td>{{ row[2] }}</td>
+      <td>{{ row[0] }}</td>
+      <td>{{ row[1] }}</td>
+      <td>
+        <a href="/delete/{{row[0]}}" id="test" type="button" class="btn btn-danger btn-xs">Delete</a>
+      </td>
+    </tr>
+    {% endfor %}
+
+  </table>
+  <!-- Footer -->
+  <footer
+    style="display: flex;justify-content: flex-end; bottom: 0; left: 0; width: 100%; background-color: #3E3E61; text-align: center; padding: 10px;color: #ffffff;position: fixed;">
+    Powered by EVOLUZN
+  </footer>
+</body>
+
+</html>

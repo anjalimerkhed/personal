@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Device</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="../static/css/global.css">
+</head>
+
+
+<body>
+
+    <a href="/home"><img src="{{img}}" style="height: 100px;"></a>
+
+    <div id="login">
+        <h3 class="text-center text-white pt-5">Add Device form</h3>
+        <div class="container">
+            <div id="login-row" class="row justify-content-center align-items-center">
+                <div id="login-column" class="col-md-6">
+                    <div id="login-box" class="col-md-12">
+                        <form id="login-form" class="form" action="{{url_for('add_device')}}" method="post" novalidate>
+                            <h3 class="text-center text-info">Add Device</h3>
+                            <div class="form-group">
+                                <label for="devicename" class="text-info">Device Name:</label><br>
+                                <input type="text" name="devicename" id="devicename" class="form-control"
+                                    autocomplete="off">
+                            </div>
+
+                            <div class="form-group">
+                                <input type="submit" name="submit" class="btn btn-info btn-md" value="Add">
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer
+        style="display: flex;justify-content: flex-end; bottom: 0; left: 0; width: 100%; background-color: #3E3E61; text-align: center; padding: 10px;color: #ffffff;position: fixed;">
+        Powered by EVOLUZN
+    </footer>
+</body>
+
+</html>
