@@ -1,0 +1,499 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+.smartled_title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 4vw;
+    margin-right: 4vw;
+
+}
+
+.smartled_container {
+    height: 48vh;
+    width: 100vw;
+    border-radius: 20px;
+    background-color: #DDDDDD;
+    margin-bottom: 2vh;
+    margin-top: 1vh;
+
+}
+
+.container {
+    background-color: aqua;
+}
+
+.diffuser_title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 4vw;
+    margin-right: 4vw;
+}
+
+.roundrange_smartled {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.round_smartled0 {
+    width: 40vw;
+    padding-left: 6vw;
+    position: relative;
+    bottom: 2vh;
+}
+
+.ledlamp {
+    height: 17vh;
+    padding-right: 4vw;
+    position: relative;
+    bottom: 2vh;
+}
+
+#rangeInput {
+    display: none;
+}
+
+.roundrange_diffuser {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.diffuserimg {
+    height: 20vh;
+    padding-right: 4vw;
+}
+
+.roundrange_diffuser1 {
+
+    padding-left: 6vw;
+    position: relative;
+    bottom: 1vh;
+    margin-top: 2vh;
+}
+
+.diffuser_container {
+    height: 48vh;
+    width: 100vw;
+    border-radius: 20px;
+    background-color: #DDDDDD;
+
+
+}
+
+/* ************** */
+
+.switch[type="checkbox"] {
+    appearance: none;
+    position: relative;
+    width: 60px;
+    /* Adjusted width */
+    height: 30px;
+    /* Adjusted height */
+    background: #f2f2f2;
+    border-radius: 25px;
+    border: 2px solid #d2d2d2;
+    transition: 0.2s;
+    margin: 0%;
+}
+
+.switch[type="checkbox"]:focus {
+    outline: none;
+}
+
+.switch[type="checkbox"]::after {
+    content: "";
+    width: 24px;
+    /* Adjusted width */
+    height: 24px;
+    /* Adjusted height */
+    background: #fff;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    border-radius: 50%;
+    transition: 0.2s;
+    box-shadow: 1px 0 5px -1px rgba(0, 0, 0, 0.2);
+    /* background: url('../img/tick_mark.png');
+    background-size: 1vh; */
+}
+
+.switch[type="checkbox"]:checked {
+    background: #1C1C1C;
+    border-color: #1C1C1C;
+}
+
+.switch[type="checkbox"]:checked::after {
+    left: 33px;
+    /* Adjusted left position */
+    box-shadow: -1px 0 5px -1px rgba(0, 0, 0, 0.2);
+}
+
+.autobrightness_input {
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    bottom: 4vh;
+    padding-left: 10vw;
+}
+
+.brightness_value {
+    font-weight: 700;
+    position: relative;
+    bottom: 6vh;
+    font-size: 4vh;
+    left: 2vw;
+    color: #DDDDDD;
+    z-index: -1;
+}
+
+.brightness_allvalues {
+    padding-right: 4vw;
+    position: relative;
+    bottom: 2vh;
+
+}
+
+.autobrightness {
+    font-weight: 700;
+    position: relative;
+    bottom: 4vh;
+    padding-left: 10vw;
+}
+
+.round_slider {
+    width: 20vw;
+}
+
+.downarrow {
+    /* font-size: 10vw; */
+}
+
+.switch_div {
+    margin-left: 4vw;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 4vw;
+}
+
+.percent {
+    position: absolute;
+    /* left: 20vw; */
+}
+
+/* ****************** */
+
+#rangeInput {
+    display: none;
+}
+
+.autobrightness_title {
+    display: flex;
+    justify-content: end;
+    font-weight: 700;
+}
+
+.autobrightness_switch {
+    display: flex;
+    justify-content: end;
+}
+
+/* ****************** */
+
+
+
+.time {
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.custom-input {
+    border: 1px solid #DDDDDD;
+    /* Border color */
+    padding: 5px;
+    /* Padding inside the input field */
+    border-radius: 5px;
+    /* Border radius to round the corners */
+    background-color: #DDDDDD;
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 375px) {
+    .custom-input {
+        padding: 5px;
+        /* Adjusted padding for 375px screens */
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .custom-input {
+        padding: 3px;
+        /* Adjusted padding for 320px screens */
+    }
+
+
+}
+
+.schedule_div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 4vw;
+    padding-left: 4vw;
+}
+
+
+#displayText {
+    display: none;
+    padding-bottom: 2vh;
+
+}
+
+#diffuser_container {
+    display: block;
+}
+
+#displayText2 {
+    display: none;
+    padding-bottom: 2vh;
+}
+
+#smartled_container {
+    display: block;
+
+}
+
+.schedule {
+    padding-right: 4vw;
+    padding-left: 4vw;
+}
+
+.color {
+    padding-right: 4vw;
+    padding-left: 4vw;
+    font-weight: 700;
+    margin-bottom: 2vh;
+}
+
+.brightness1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 4vw;
+    padding-left: 4vw;
+}
+
+.brightness {
+    position: relative;
+    bottom: 7vh;
+    color: rgb(117, 112, 112);
+    padding-left: 10vw;
+    margin-top: 1.9vh;
+
+}
+
+.led_image {
+    margin-left: -1vw;
+}
+
+.low {
+    font-size: 2vh;
+    margin-bottom: 0vh;
+    margin-left: 10vw;
+}
+
+.high {
+    font-size: 2vh;
+    margin-bottom: 1vh;
+    margin-left: 10vw;
+
+}
+
+.smartled_title1 {
+    font-weight: 700;
+    margin-top: .5vh;
+}
+
+#toggle_icon_expand {
+    display: none;
+    height: 20px;
+}
+
+#toggle_icon_expand2 {
+    display: none;
+}
+
+#toggle_icon {
+    /* font-weight: 1000; */
+    height: 20px;
+}
+
+#toggle_icon2 {
+    /* font-weight: 1000; */
+    height: 20px;
+}
+
+#toggle_icon_expand2 {
+    /* font-weight: 1000; */
+    height: 20px;
+}
+
+.schedule_ledtime1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.schedule_ledtime2 {
+    background-color: #000000;
+    color: white;
+    border-radius: 5px;
+    padding: .5vh;
+    border: none;
+    height: 30px;
+    width: 90px;
+
+
+}
+
+.schedule_diffuser1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.schedule_diffuser2 {
+    background-color: #000000;
+    color: white;
+    border-radius: 5px;
+    padding: .5vh;
+    border: none;
+    height: 30px;
+    width: 90px;
+    cursor: pointer;
+
+}
+
+/* Style the custom audio player */
+.audio-player {
+    background-color: yellow;
+    /* Change the background color */
+}
+
+.audio-player::-webkit-media-controls-panel {
+    color: yellow;
+    /* Change the color of the controls */
+}
+
+.warm_white {
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    background-color:#f8da77;
+    border: none;
+
+}
+
+.naturals_white {
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    background-color:#f7e4af;
+    border: none;
+
+}
+
+.cool_white {
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    background-color: rgb(243, 243, 238);
+    border: none;
+
+
+}
+.warmwhite1{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 10px;
+
+}
+.warmwhite2{
+    margin-right: 1vw;
+
+}
+.naturals_white2{
+    margin-right: 1vw;
+
+}
+.cool_white2{
+    margin-right: 1vw;
+
+}
+.warm{
+    display: flex;
+    justify-content: center;
+}
+.natural{
+    display: flex;
+    justify-content: center;
+}
+.cool{
+    display: flex;
+    justify-content: center;
+}
+
+
+#image1{
+    display: none;
+    max-width: 300px;
+    height: 17vh;
+    padding-right: 4vw;
+    position: relative;
+    bottom: 2vh;
+}
+ #image2  {
+    display: none;
+    max-width: 300px;
+    height: 17vh;
+    padding-right: 4vw;
+    position: relative;
+    bottom: 2vh;
+}
+#image3  {
+    display: none;
+    max-width: 300px;
+    height: 17vh;
+    padding-right: 4vw;
+    position: relative;
+    bottom: 2vh;
+}
+
+#image2 {
+    display: block;
+    height: 17vh;
+    padding-right: 4vw;
+    position: relative;
+    bottom: 2vh;
+    /* Set image2 to be visible by default */
+}
+.musicdiv{
+    display: flex;
+    justify-content: center;
+}
+.diffuser_container2{
+   margin-right: 14px;
+}
+.waterlevellow{
+    color: rgb(245, 112, 112);
+}

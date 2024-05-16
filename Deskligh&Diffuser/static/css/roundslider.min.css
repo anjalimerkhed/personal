@@ -1,0 +1,732 @@
+/*! roundSlider v1.6.1 | (c) 2015-2020, Soundar | MIT license | http://roundsliderui.com/licence.html */
+.rs-ie,
+.rs-edge,
+.rs-handle {
+    -ms-touch-action: none;
+    touch-action: none
+}
+
+.rs-control {
+    position: relative;
+    outline: 0 none
+}
+
+.rs-container {
+    position: relative
+}
+
+.rs-control *,
+.rs-control *:before,
+.rs-control *:after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+.rs-animation .rs-transition {
+    transition: all 0.5s linear 0s
+}
+
+.rs-transition {
+    position: relative;
+    bottom: 2vh;
+}
+
+.rs-bar {
+    -webkit-transform-origin: 100% 50%;
+    -ms-transform-origin: 100% 50%;
+    transform-origin: 100% 50%
+}
+
+.rs-control .rs-split .rs-path,
+.rs-control .rs-overlay1,
+.rs-control .rs-overlay2 {
+    -webkit-transform-origin: 50% 100%;
+    -ms-transform-origin: 50% 100%;
+    transform-origin: 50% 100%
+}
+
+.rs-control .rs-overlay {
+    -webkit-transform-origin: 100% 100%;
+    -ms-transform-origin: 100% 100%;
+    transform-origin: 100% 100%
+}
+
+.rs-rounded .rs-seperator,
+.rs-split .rs-path {
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box
+}
+
+.rs-disabled {
+    opacity: .35
+}
+
+.rs-inner-container {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    overflow: hidden
+}
+
+.rs-control .rs-quarter div.rs-block {
+    height: 200%;
+    width: 200%
+}
+
+.rs-control .rs-half.rs-top div.rs-block,
+.rs-control .rs-half.rs-bottom div.rs-block {
+    height: 200%;
+    width: 100%
+}
+
+.rs-control .rs-half.rs-left div.rs-block,
+.rs-control .rs-half.rs-right div.rs-block {
+    height: 100%;
+    width: 200%
+}
+
+.rs-control .rs-bottom .rs-block {
+    top: auto;
+    bottom: 0
+}
+
+.rs-control .rs-right .rs-block {
+    right: 0
+}
+
+.rs-block.rs-outer {
+    border-radius: 1000px
+}
+
+.rs-block {
+    height: 100%;
+    width: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    overflow: hidden;
+    z-index: 3
+}
+
+.rs-block .rs-inner {
+    border-radius: 1000px;
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: relative
+}
+
+.rs-overlay {
+    width: 50%
+}
+
+.rs-overlay1,
+.rs-overlay2 {
+    width: 100%
+}
+
+.rs-overlay,
+.rs-overlay1,
+.rs-overlay2 {
+    position: absolute;
+    background-color: #fff;
+    z-index: 3;
+    top: 0;
+    height: 50%
+}
+
+.rs-bar {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    height: 0;
+    z-index: 10
+}
+
+.rs-bar.rs-rounded {
+    z-index: 5
+}
+
+.rs-bar .rs-seperator {
+    height: 0;
+    display: block;
+    float: left
+}
+
+.rs-bar:not(.rs-rounded) .rs-seperator {
+    border-left: none;
+    border-right: none
+}
+
+.rs-bar.rs-start .rs-seperator {
+    border-top: none
+}
+
+.rs-bar.rs-end .rs-seperator {
+    border-bottom: none
+}
+
+.rs-bar.rs-start.rs-rounded .rs-seperator {
+    border-radius: 0 0 1000px 1000px
+}
+
+.rs-bar.rs-end.rs-rounded .rs-seperator {
+    border-radius: 1000px 1000px 0 0
+}
+
+.rs-full .rs-bar,
+.rs-half .rs-bar {
+    width: 50%
+}
+
+.rs-half.rs-left .rs-bar,
+.rs-half.rs-right .rs-bar,
+.rs-quarter .rs-bar {
+    width: 100%
+}
+
+.rs-full .rs-bar,
+.rs-half.rs-left .rs-bar,
+.rs-half.rs-right .rs-bar {
+    top: 50%
+}
+
+.rs-bottom .rs-bar {
+    top: 0
+}
+
+.rs-half.rs-right .rs-bar,
+.rs-quarter.rs-right .rs-bar {
+    right: 100%
+}
+
+.rs-handle.rs-move {
+    cursor: move
+}
+
+.rs-readonly .rs-handle.rs-move {
+    cursor: default
+}
+
+.rs-classic-mode .rs-path {
+    display: block;
+    height: 100%;
+    width: 100%
+}
+
+.rs-split .rs-path {
+    border-radius: 1000px 1000px 0 0;
+    overflow: hidden;
+    height: 50%;
+    position: absolute;
+    top: 0;
+    z-index: 2
+}
+
+.rs-control .rs-svg-container {
+    display: block;
+    position: absolute;
+    top: 0
+}
+
+.rs-control .rs-bottom .rs-svg-container {
+    top: auto;
+    bottom: 0
+}
+
+.rs-control .rs-right .rs-svg-container {
+    right: 0
+}
+
+.rs-tooltip {
+    position: absolute;
+    cursor: default;
+    border: 1px solid transparent;
+    z-index: 10;
+    font-size: 35px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    /* margin-left: 65vw; */
+}
+
+.rs-full .rs-tooltip {
+    top: 50%;
+    left: 50%
+}
+
+.rs-bottom .rs-tooltip {
+    top: 0
+}
+
+.rs-top .rs-tooltip {
+    bottom: 0
+}
+
+.rs-right .rs-tooltip {
+    left: 0
+}
+
+.rs-left .rs-tooltip {
+    right: 0
+}
+
+.rs-half.rs-top .rs-tooltip,
+.rs-half.rs-bottom .rs-tooltip {
+    left: 50%
+}
+
+.rs-half.rs-left .rs-tooltip,
+.rs-half.rs-right .rs-tooltip {
+    top: 50%
+}
+
+.rs-tooltip .rs-input {
+    outline: 0 none;
+    border: none;
+    background: transparent
+}
+
+.rs-tooltip-text {
+    font-family: verdana;
+    font-size: 13px;
+    border-radius: 7px;
+    text-align: center;
+    color: inherit
+}
+
+.rs-tooltip.rs-edit {
+    padding: 5px 8px
+}
+
+.rs-tooltip.rs-hover,
+.rs-tooltip.rs-edit:hover {
+    border: 1px solid #AAA;
+    cursor: pointer
+}
+
+.rs-readonly .rs-tooltip.rs-edit:hover {
+    border-color: transparent;
+    cursor: default
+}
+
+.rs-tooltip.rs-center {
+    margin: 0px !important
+}
+
+.rs-half.rs-top .rs-tooltip.rs-center,
+.rs-half.rs-bottom .rs-tooltip.rs-center {
+    transform: translate(-50%, 0)
+}
+
+.rs-half.rs-left .rs-tooltip.rs-center,
+.rs-half.rs-right .rs-tooltip.rs-center {
+    transform: translate(0, -50%)
+}
+
+.rs-full .rs-tooltip .rs-center {
+    transform: translate(-50%, -50%)
+}
+
+.rs-tooltip .rs-reset {
+    margin: 0px !important;
+    top: 0px !important;
+    left: 0px !important
+}
+
+.rs-handle {
+    border-radius: 1000px;
+    outline: 0 none;
+    float: left
+}
+
+.rs-handle.rs-handle-square {
+    border-radius: 0
+}
+
+.rs-handle-dot {
+    border: 1px solid #AAA;
+    padding: 6px
+}
+
+.rs-handle-dot:after {
+    display: block;
+    content: "";
+    border: 1px solid #a5a5a5;
+    height: 100%;
+    width: 100%;
+    border-radius: 1000px
+}
+
+
+.rs-seperator {
+    border: 1px solid #AAA
+}
+
+.rs-border {
+    border: 1px solid #AAA
+}
+
+.rs-path-color {
+    background-color: #AAA
+}
+
+.rs-range-color {
+    background-color: #000000
+}
+
+.rs-bg-color {
+    background-color: #dddddd
+}
+
+.rs-handle {
+    background-color: #000000
+}
+
+.rs-handle-dot {
+    background-color: #000000
+}
+
+.rs-handle-dot:after {
+    background-color: #000000
+}
+
+
+.rs-path-inherited .rs-path {
+    opacity: .2
+}
+
+.rs-svg-mode .rs-path {
+    stroke: #FFF
+}
+
+.rs-svg-mode .rs-range {
+    stroke: #141414
+}
+
+.rs-svg-mode .rs-border {
+    stroke: #AAA
+}
+
+.rs-tooltip {
+    font-size: 35px;
+}
+
+.rs-tooltip::after {
+    content: '%'; /* Display the percentage sign */
+    position: absolute; /* Position the percentage sign relative to the .rs-tooltip */
+    left: 100%; /* Position the percentage sign immediately after the content of .rs-tooltip */
+    top: 1.5vh; /* Align the percentage sign vertically with the content of .rs-tooltip */
+    font-size: 25px;
+}
+@media (max-height: 667px) {
+    .rs-tooltip::after {
+        content: '%'; /* Display the percentage sign */
+        position: absolute; /* Position the percentage sign relative to the .rs-tooltip */
+        left: 100%; /* Position the percentage sign immediately after the content of .rs-tooltip */
+        top: 1.5vh; /* Align the percentage sign vertically with the content of .rs-tooltip */
+        font-size: 18px;
+    }
+  }
+@media screen  and (max-width: 775px) {
+
+    .smartlight_value {
+        margin-left: 72vw;
+    }
+}
+@media screen  and (max-width: 770px) {
+
+    .smartlight_value {
+        margin-left: 71.5vw;
+    }
+}
+@media screen and (max-width: 768px) {
+    /* Styles applied when the viewport width is 600px or less */
+    .smartlight_value {
+        margin-left: 71vw;
+    }
+  }
+  @media screen and (max-width: 721px) {
+    /* Styles applied when the viewport width is 600px or less */
+    .smartlight_value {
+        margin-left: 70vw;
+    }
+  }
+  @media screen and (max-width: 680px) {
+    /* Styles applied when the viewport width is 600px or less */
+    .smartlight_value {
+        margin-left: 69vw;
+    }
+  }
+  @media screen and (max-width: 672px) {
+    /* Styles applied when the viewport width is 600px or less */
+    .smartlight_value {
+        margin-left: 68.5vw;
+    }
+  }
+  @media screen and (max-width: 651px) {
+    /* Styles applied when the viewport width is 600px or less */
+    .smartlight_value {
+        margin-left: 68vw;
+    }
+  }
+  @media screen and (max-width: 637px) {
+    /* Styles applied when the viewport width is 600px or less */
+    .smartlight_value {
+        margin-left: 67.5vw;
+    }
+  }
+  @media screen and (max-width: 627px) {
+    /* Styles applied when the viewport width is 600px or less */
+    .smartlight_value {
+        margin-left: 68vw;
+    }
+  }
+
+  @media screen and (max-width: 616px) {
+    /* Styles applied when the viewport width is 600px or less */
+    .smartlight_value {
+        margin-left: 67vw;
+    }
+  }
+
+
+@media screen and (max-width: 600px) {
+    /* Styles applied when the viewport width is 600px or less */
+    .smartlight_value {
+        margin-left: 66vw;
+    }
+  }
+  @media screen  and (max-width: 585px) {
+
+    /* Styles applied when the viewport width is between 600px and 900px */
+    .smartlight_value {
+        margin-left: 65.5vw;
+    }
+}
+
+@media screen  and (max-width: 583px) {
+
+    /* Styles applied when the viewport width is between 600px and 900px */
+    .smartlight_value {
+        margin-left: 65vw;
+    }
+}
+
+@media screen  and (max-width: 551px) {
+
+    .smartlight_value {
+        margin-left: 64vw;
+    }
+}
+@media screen  and (max-width: 529px) {
+
+    .smartlight_value {
+        margin-left: 63vw;
+    }
+}
+@media screen  and (max-width: 509px) {
+
+    .smartlight_value {
+        margin-left: 62vw;
+    }
+}
+@media screen  and (max-width:503px) {
+
+    .smartlight_value {
+        margin-left: 61vw;
+    }
+}
+@media screen  and (max-width: 491px) {
+
+    .smartlight_value {
+        margin-left: 61vw;
+    }
+}
+@media screen  and (max-width: 471px) {
+
+    .smartlight_value {
+        margin-left: 60vw;
+    }
+}
+@media screen  and (max-width: 453px) {
+
+    .smartlight_value {
+        margin-left: 59vw;
+    }
+}
+@media screen  and (max-width: 441px) {
+
+    .smartlight_value {
+        margin-left: 58vw;
+    }
+}
+@media screen  and (max-width:430px) {
+
+    .smartlight_value {
+        margin-left: 57vw;
+    }
+}
+@media screen  and (max-width:424px) {
+
+    .smartlight_value {
+        margin-left: 56vw;
+    }
+}
+@media screen  and (max-width:416px) {
+
+    .smartlight_value {
+        margin-left: 55vw;
+    }
+}
+@media screen  and (max-width: 400px) {
+
+    .smartlight_value {
+        margin-left: 54vw;
+    }
+}
+@media screen  and (max-width: 398px) {
+
+    .smartlight_value {
+        margin-left: 53vw;
+    }
+}
+
+@media screen  and (max-width: 389px) {
+
+    .smartlight_value {
+        margin-left: 52vw;
+    }
+}
+@media screen  and (max-width: 386px) {
+
+    .smartlight_value {
+        margin-left: 51vw;
+    }
+}
+@media screen  and (max-width: 384px) {
+
+    .smartlight_value {
+        margin-left: 50vw;
+    }
+}
+
+
+@media screen  and (max-width: 376px) {
+
+    .smartlight_value {
+        margin-left: 50vw;
+    }
+}
+@media screen  and (max-width: 365px) {
+
+    .smartlight_value {
+        margin-left: 48vw;
+    }
+}
+@media screen  and (max-width: 353px) {
+
+    .smartlight_value {
+        margin-left: 47vw;
+    }
+}
+@media screen  and (max-width: 337px) {
+
+    .smartlight_value {
+        margin-left: 45vw;
+    }
+}
+@media screen  and (max-width: 332px) {
+
+    .smartlight_value {
+        margin-left: 44vw;
+    }
+}
+@media screen  and (max-width: 323px) {
+
+    .smartlight_value {
+        margin-left: 43vw;
+    }
+}
+@media screen  and (max-width: 316px) {
+
+    .smartlight_value {
+        margin-left: 41.5vw;
+    }
+}
+@media screen  and (max-width: 315px) {
+
+    .smartlight_value {
+        margin-left: 40.5vw;
+    }
+}
+@media screen  and (max-width: 304px) {
+
+    .smartlight_value {
+        margin-left: 39vw;
+    }
+}
+@media screen  and (max-width: 299px) {
+
+    .smartlight_value {
+        margin-left: 39vw;
+    }
+}
+@media screen  and (max-width: 295px) {
+
+    .smartlight_value {
+        margin-left: 38.5vw;
+    }
+}
+@media screen  and (max-width: 289px) {
+
+    .smartlight_value {
+        margin-left: 37.5vw;
+    }
+}
+
+@media screen  and (max-width: 288px) {
+
+    .smartlight_value {
+        margin-left: 37vw;
+    }
+}
+@media screen  and (max-width: 284px) {
+
+    .smartlight_value {
+        margin-left: 36.5vw;
+    }
+}
+@media screen  and (max-height: 667px) {
+
+    .smartlight_value {
+        margin-left: 52vw;
+        font-size: 6vw;
+    }
+}
+.diffuser_value{
+    font-size: 23px;
+}
+.diffuser_value::after {
+    content: 'min'; /* Display the percentage sign */
+    position: absolute; /* Position the percentage sign relative to the .rs-tooltip */
+    left: 100%; /* Position the percentage sign immediately after the content of .rs-tooltip */
+    top: 1.5vh; /* Align the percentage sign vertically with the content of .rs-tooltip */
+    font-size: 12px;
+    
+}
+
+.auto_onn_off{
+    /* font-size: 13px; */
+    font-weight: 700;
+   
+}
+.music_title{
+    /* font-size: 13px; */
+    font-weight: 700;
+    padding-left: 4vw;
+}
+.music_kaise_ye_akhiya_kamal{
+    width: 90vw;
+    padding-right: 1vw;
+}
