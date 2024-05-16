@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Cumulative Power for Devices</h1>
+        <table id="cumulativePowerTable" class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Device ID</th>
+                    <th scope="col">Cumulative Power</th>
+                </tr>
+            </thead>
+            <tbody>
+               
+            </tbody>
+        </table>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            function updateCumulativePower() {
+                $.getJSON('/cumulative_power_data', function(data) {
+                    $('#cumulativePowerTable tbody').empty(); // Clear existing rows
+                    $.each(data, function(device_id, power) {
+                        $('#cumulativePowerTable tbody').append(
+                            '<tr>' +
+                                '<td>' + device_id + '</td>' +
+                                '<td>' + power + '</td>' +
+                            '</tr>'
+                        );
+                    });
+                });
+            }
+
+            // Update cumulative power every second
+            setInterval(updateCumulativePower, 1000);
+        });
+    </script>
+</body>
+    
+</body>
+</html>
