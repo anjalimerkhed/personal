@@ -1,0 +1,202 @@
+.dust-sensor {
+  background-color: #2f2f2f;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.dust-sensor .div {
+  background-color: #2f2f2f;
+  width: 539px;
+  height: 900px;
+  position: relative;
+}
+
+.dust-sensor .overlap {
+  position: absolute;
+  width: 539px;
+  height: 28px;
+  top: 872px;
+  left: 0;
+  background-color: #ffffff;
+}
+
+.dust-sensor .text-wrapper {
+  position: absolute;
+  top: 4px;
+  left: 189px;
+  font-family: "Arial-Bold", Helvetica;
+  font-weight: 700;
+  color: #585858;
+  font-size: 15px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.dust-sensor .ic-round-menu {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 26px;
+  left: 489px;
+}
+
+.dust-sensor .mingcute {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 26px;
+  left: 446px;
+}
+
+.dust-sensor .overlap-group {
+  position: absolute;
+  width: 501px;
+  height: 124px;
+  top: 173px;
+  left: 19px;
+  border-radius: 22px;
+}
+
+.dust-sensor .rectangle {
+  position: absolute;
+  width: 501px;
+  height: 124px;
+  top: 0;
+  left: 0;
+  border-radius: 22px;
+  transform: rotate(180deg);
+  box-shadow: 0px 4px 4px -2px #ffffff80;
+  backdrop-filter: blur(22.4px) brightness(100%);
+  -webkit-backdrop-filter: blur(22.4px) brightness(100%);
+  background: linear-gradient(180deg, rgb(0, 0, 0) 0%, rgba(255, 255, 255, 0.5) 100%);
+}
+
+.dust-sensor .element {
+  position: absolute;
+  top: 10px;
+  left: 94px;
+  font-family: "Arial-Black", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 72px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.dust-sensor .span {
+  font-weight: 900;
+}
+
+.dust-sensor .text-wrapper-2 {
+  font-family: "Arial-Regular", Helvetica;
+  font-size: 37px;
+}
+
+.dust-sensor .overlap-2 {
+  position: absolute;
+  width: 501px;
+  height: 124px;
+  top: 400px;
+  left: 19px;
+  border-radius: 22px;
+}
+
+.dust-sensor .overlap-3 {
+  position: absolute;
+  width: 501px;
+  height: 124px;
+  top: 637px;
+  left: 19px;
+  border-radius: 22px;
+}
+
+.dust-sensor .text-wrapper-3 {
+  position: absolute;
+  top: 120px;
+  left: 72px;
+  font-family: "Arial-Black", Helvetica;
+  font-weight: 900;
+  color: #ffffff;
+  font-size: 26px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.dust-sensor .text-wrapper-4 {
+  top: 347px;
+  position: absolute;
+  left: 72px;
+  font-family: "Arial-Black", Helvetica;
+  font-weight: 900;
+  color: #ffffff;
+  font-size: 26px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.dust-sensor .text-wrapper-5 {
+  top: 584px;
+  position: absolute;
+  left: 72px;
+  font-family: "Arial-Black", Helvetica;
+  font-weight: 900;
+  color: #ffffff;
+  font-size: 26px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.dust-sensor .image-wrapper {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 121px;
+  left: 20px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0px 4px 4px #00000040;
+}
+
+.dust-sensor .image {
+  width: 28px;
+  height: 28px;
+  top: 6px;
+  left: 6px;
+  position: absolute;
+  object-fit: cover;
+}
+
+.dust-sensor .img-wrapper {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 348px;
+  left: 20px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0px 4px 4px #00000040;
+}
+
+.dust-sensor .overlap-group-2 {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 585px;
+  left: 20px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0px 4px 4px #00000040;
+}
+
+.dust-sensor .img {
+  width: 176px;
+  height: 59px;
+  top: 11px;
+  left: 20px;
+  position: absolute;
+  object-fit: cover;
+}
