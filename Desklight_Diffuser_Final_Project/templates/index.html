@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/css/font.css">
+    <link rel="stylesheet" href=".././static/remixicon/remixicon.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/roundslider.min.css">
+    <script src="../static/js/jquery.min.js"></script>
+    <script src="../static/js/socket.js"></script>
+</head>
+
+<body>
+    <div class="">
+        <!-- <form id="scheduleForm" action="/schedule" method="post"> -->
+        <div class="smartled_container smartled_container" id="smartled_container">
+            <div class="evoluzn_logo">EVOLUZN</div>
+            <form id="scheduleForm" action="/schedule" method="post">
+                <div class="smartled_title">
+                    <div class="smartled_title1">SMART LIGHT</div>
+                    <div id="toggleButton">
+                        <i class="ri-arrow-down-s-line" id="toggle_icon"></i>
+                        <i class="ri-expand-up-down-line" id="toggle_icon_expand"></i>
+                    </div>
+                </div>
+
+                <!-- <div class="switch_div">
+                    <input type="checkbox" class="switch" id="lightCheckbox">
+                </div> -->
+
+                <div class="roundrange_smartled">
+                    <div class="round_smartled0">
+                        <div class="low">Low</div>
+                        <div class="round_slider">
+                            <div class="range-input-container">
+                                <input type="range" id="rangeInput">
+                            </div>
+                            <div id="root2"></div>
+                        </div>
+                        <div class="high">High</div>
+                    </div>
+                    <div class="brightness_allvalues">
+                        <img src="../static/img/dark_led_copy.png" alt="Image 1" height="250" id="lampIcon"
+                            class="ledlamp">
+                        <div>
+
+                            <div>
+                                <div>
+                                    <div style="position: absolute;z-index: -99;" class="brightness_value"
+                                        id="brightnessValue">.</div>
+                                    <!-- <div class="brightness">Brightness Level</div> -->
+                                    <div style="display: flex;justify-content: center; align-items: center; ">
+                                        <div style="margin-right: 4px; font-weight: 700;">OFF</div>
+                                        <input type="checkbox" class="switch" id="lightCheckbox">
+                                        <div style="margin-left:4px ;font-weight: 700;">ON</div>
+                                    </div>
+
+                                    <div class="autobrightness_input"
+                                        style="display: flex;justify-content: center; align-items: center; ">
+                                        <div style="margin-right: 4px; font-weight: 700;">OFF</div>
+
+                                        <input  type="checkbox" class="switch"
+                                            id="Autobrightness">
+                                        <div style="margin-left:4px ;font-weight: 700;">ON</div>
+
+                                    </div>
+                                    <div class="autobrightness">Auto
+                                        Brightness</div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="smartled_color_schedule" id="displayText">
+                    <div class="color">Color</div>
+                    <div class="brightness1">
+                        <img class="led_image" src="../static/img/led_icon.png" alt="">
+                        <input type="range" id="brightness" name="brightness" min="0" max="100" value="50"
+                            class="brightness-controller">
+                    </div>
+                    <br>
+                    <div class="color">Schedule</div>
+                    <div class="row" style="display: none;">
+                        <div class="col">
+                            <label for="SrNo">SrNo:</label>
+                            <input type="text" id="SrNo" name="SrNo" value="desklightAAAAA6">
+                        </div>
+                    </div>
+                    <div class="schedule_div">
+                        <div class="">
+                            <!-- <p class="time">From: <input type="time" id="startTime" value="08:00" class="custom-input"></p> -->
+                            <p class="time">From: <input type="time" id="startTime" name="startTime"
+                                    class="custom-input"></p>
+                        </div>
+
+                        <div class="">
+                            <!-- <p class="time">To: <input type="time" id="startTime" value="08:00" class="custom-input"></p> -->
+                            <p class="time">To: <input type="time" id="endTime" name="endTime" class="custom-input"></p>
+                        </div>
+                    </div>
+                    <input type="hidden" id="scheduling" name="scheduling" value="0" required />
+                    <div class="schedule_ledtime1">
+                        <button type="submit" class="schedule_ledtime2">Schedule</button>
+                    </div>
+
+                </div>
+                <!-- **toggle div end*** -->
+            </form>
+        </div>
+
+        <div class="diffuser_container" id="diffuser_container">
+            <form id="scheduleForm" action="/schedule" method="post">
+                <div class="diffuser_title">
+                    <div class="smartled_title1">AIR DIFFUSER</div>
+                    <div id="toggleButton2">
+                        <i class="ri-arrow-down-s-line" id="toggle_icon2"></i>
+                        <i class="icon ri-expand-up-down-line " id="toggle_icon_expand2"></i>
+                    </div>
+                </div>
+                <div class="switch_div">
+                    <!-- <input type="checkbox" class="switch" id="diffuser"> -->
+                    <div class="waterlevellow" id="split_payload_data">{{split_payload}}</div>
+                </div>
+                <div class="roundrange_diffuser">
+                    <div class="roundrange_diffuser1">
+                        <div class="low">Low</div>
+                        <div class="round_slider">
+                            <div class="range-input-container">
+                                <input type="range" id="rangeInput">
+                            </div>
+                            <div id="root"></div>
+                        </div>
+                        <div class="high">High</div>
+                    </div>
+                    <div class="brightness_allvalues">
+                        <img src="../static/img/air diffuser.png" alt="Image 1" height="250"  style="height: 10vh; position: relative;left: 25px;"
+                           >
+                        <div>
+
+                            <div>
+                                <div>
+                                    <div style="position: absolute;z-index: -99;" class="brightness_value"
+                                        id="brightnessValue">.</div>
+                                    <!-- <div class="brightness">Brightness Level</div> -->
+                                    <div style="display: flex;justify-content: center; align-items: center; position: relative;right: 40px;">
+                                        <div style="margin-right: 4px; font-weight: 700;">OFF</div>
+                                        <input type="checkbox" class="switch" id="diffuser">
+                                        <div style="margin-left:4px ;font-weight: 700;">ON</div>
+                                    </div>
+
+                                    <div class="autobrightness_input"
+                                        style="display: flex;justify-content: center; align-items: center;  position: relative;right: 40px;">
+                                        <div style="margin-right: 4px; font-weight: 700;">OFF</div>
+
+                                        <input  type="checkbox" class="switch"
+                                            id="diffuserAuto">
+                                        <div style="margin-left:4px ;font-weight: 700;">ON</div>
+
+                                    </div>
+                                    <div class="autobrightness" style=" position: relative;right: 68px;">Auto ON/OFF </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ***toggle div end****-->
+                <div id="displayText2">
+                    <div class="color">Music</div>
+                    <div class="music_div">
+                        <audio controls class="music_kaise_ye_akhiya_kamal">
+                            <source src="../static/music/Kaisi Yeh Lagdi Kamaal_64-(PagalWorld).mp3" type="audio/mpeg">
+                        </audio>
+                    </div>
+                    <div class="color">Schedule</div>
+                    <div class="row" style="display: none;">
+                        <div class="col">
+                            <label for="SrNo">SrNo:</label>
+                            <input type="text" id="SrNo" name="SrNo" value="diffuserAAAAA5">
+                        </div>
+                    </div>
+
+                    <div class="schedule_div">
+                        <div class="">
+                            <!-- <p class="time">From: <input type="time" id="startTime" value="08:00" class="custom-input"></p> -->
+                            <p class="time">From: <input type="time" id="startTime" name="startTime"
+                                    class="custom-input"></p>
+                        </div>
+
+                        <div class="">
+                            <!-- <p class="time">To: <input type="time" id="startTime" value="08:00" class="custom-input"></p> -->
+                            <p class="time">To: <input type="time" id="endTime" name="endTime" class="custom-input"></p>
+                        </div>
+                    </div>
+                    <div class="schedule_diffuser1">
+                        <!-- <button class="schedule_diffuser2">Schedule</button> -->
+                        <input type="hidden" id="scheduling" name="scheduling" value="0" required />
+                        <div class="schedule_diffuser2">
+                            <button type="submit" class="schedule_diffuser2">Schedule</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="poweredby_evoluzn">Powered by Evoluzn</div>
+        </div>
+
+    </div>
+
+
+    <script>
+        function updateSplitPayload() {
+            $.ajax({
+                url: "/get_split_payload",
+                type: "GET",
+                success: function (data) {
+                    $("#split_payload_data").html(data);
+                }
+            });
+        }
+        updateSplitPayload();
+        setInterval(updateSplitPayload, 5000);
+    </script>
+
+
+    <script src="../static/js/main.js"></script>
+    <script src="../static/js/jquery.min.js"></script>
+    <script src="../static/js/popper.min.js"></script>
+    <script src="../static/js/index.js"></script>
+
+    <!-- ***** -->
+
+
+    <script src="../static/js/jquery-3.6.0.min.js"></script>
+    <script src="../static/js/roundslider.min.js"></script>
+    <script src="../static/js/round_smartled.js"></script>
+    <script src="../static/js/round_diffuser.js"></script>
+</body>
+
+</html>

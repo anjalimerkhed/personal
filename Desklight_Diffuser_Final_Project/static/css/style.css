@@ -1,0 +1,458 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+}
+
+.smartled_title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 4vw;
+    margin-right: 4vw;
+
+}
+
+.smartled_container {
+    height: 48vh;
+    width: 100vw;
+    border-radius: 20px;
+    background-color: #DDDDDD;
+    margin-bottom: 1vh;
+    margin-top: 1vh;
+
+}
+
+.container {
+    background-color: aqua;
+}
+
+.diffuser_title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 4vw;
+    margin-right: 4vw;
+}
+
+.roundrange_smartled {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.round_smartled0 {
+    width: 40vw;
+    padding-left: 6vw;
+    position: relative;
+    top: 2vh;
+}
+
+.ledlamp {
+    height: 20vh;
+    padding-right: 4vw;
+    position: relative;
+    bottom: 2vh;
+    margin-right: 28px;
+    top: 17px;
+}
+
+#rangeInput {
+    display: none;
+}
+
+.roundrange_diffuser {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.diffuserimg {
+    height: 10vh;
+    /* padding-right: 16vw; */
+    position: relative;
+    left: 75px;
+}
+
+.roundrange_diffuser1 {
+
+    padding-left: 6vw;
+    position: relative;
+    bottom: 1vh;
+    margin-top: 2vh;
+}
+
+.diffuser_container {
+    height: 48vh;
+    width: 100vw;
+    border-radius: 20px;
+    background-color: #DDDDDD;
+   
+
+}
+
+/* ************** */
+
+.switch[type="checkbox"] {
+    appearance: none;
+    position: relative;
+    width: 60px;
+    /* Adjusted width */
+    height: 30px;
+    /* Adjusted height */
+    background: #f2f2f2;
+    border-radius: 25px;
+    border: 2px solid #d2d2d2;
+    transition: 0.2s;
+    margin: 0%;
+}
+
+.switch[type="checkbox"]:focus {
+    outline: none;
+}
+
+.switch[type="checkbox"]::after {
+    content: "";
+    width: 24px;
+    /* Adjusted width */
+    height: 24px;
+    /* Adjusted height */
+    background: #fff;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    border-radius: 50%;
+    transition: 0.2s;
+    box-shadow: 1px 0 5px -1px rgba(0, 0, 0, 0.2);
+    /* background: url('../img/tick_mark.png');
+    background-size: 1vh; */
+}
+
+.switch[type="checkbox"]:checked {
+    background: #1C1C1C;
+    border-color: #1C1C1C;
+}
+
+.switch[type="checkbox"]:checked::after {
+    left: 33px;
+    /* Adjusted left position */
+    box-shadow: -1px 0 5px -1px rgba(0, 0, 0, 0.2);
+}
+
+.autobrightness_input {
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    top: 5px;
+}
+
+.brightness_value {
+    font-weight: 700;
+    position: relative;
+    bottom: 6vh;
+    font-size: 4vh;
+    left: 2vw;
+    color:#DDDDDD;
+}
+.brightness_allvalues{
+    padding-right: 4vw;
+    position: relative;
+    bottom: 2vh;
+    margin-top: 4vh;
+}
+.autobrightness {
+    font-weight: 700;
+    position: relative;
+    top: 5px;
+    bottom: 4vh;
+    font-size: 16px;
+    margin-left: 58px;
+}
+.auto_on_off{
+    font-weight: 700;
+    position: relative;
+    top: 5px;
+    bottom: 4vh;
+    font-size: 16px;
+}
+.round_slider {
+    width: 20vw;
+}
+
+.downarrow {
+    /* font-size: 10vw; */
+}
+
+.switch_div {
+    margin-left: 4vw;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 4vw;
+    color: rgb(248, 66, 66);
+    font-size: 20px;
+}
+
+.percent {
+    position: absolute;
+    /* left: 20vw; */
+}
+
+/* ****************** */
+/* .brightness-controller {
+    width: 70%;
+    height: 2vh;
+    -webkit-appearance: none;
+    background: linear-gradient(to right, #FDFDFD 0%, #FAEDB9 50%, #FAE588 100%);
+    border-radius: 10px;
+    outline: none;
+    padding: 0;
+    margin: 0px;
+} */
+
+.brightness-controller {
+    width: 70%;
+    height: 2vh;
+    -webkit-appearance: none;
+    /* background: linear-gradient(135deg, #FDFDFD 0%, #FAEDB9 50%, #FAE588 100%); */
+    background: linear-gradient(to right, #FDFDFD 0%, #FDFDFD 33%, #FAEDB9 33%, #ecd67f 66%, #d8b103 66%, #f8cf17 100%);
+    border-radius: 10px;
+    outline: none;
+    padding: 0;
+    margin: 0px;
+}
+
+.brightness-controller::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(to right, #FAE794, #FFFFFF);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+    /* Shadow */
+}
+
+@media only screen and (max-width: 375px) {
+    .brightness-controller {
+        width: 65%;
+        /* Adjusted width for 375px screens */
+    }
+
+    .brightness-controller::-webkit-slider-thumb {
+        width: 18px;
+        /* Adjusted width for 375px screens */
+        height: 18px;
+        /* Adjusted height for 375px screens */
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .brightness-controller {
+        width: 60%;
+        /* Adjusted width for 320px screens */
+    }
+
+    .brightness-controller::-webkit-slider-thumb {
+        width: 18px;
+        /* Adjusted width for 320px screens */
+        height: 18px;
+        /* Adjusted height for 320px screens */
+    }
+}
+
+#rangeInput {
+    display: none;
+}
+
+.autobrightness_title {
+    display: flex;
+    justify-content: end;
+    font-weight: 700;
+}
+
+.autobrightness_switch {
+    display: flex;
+    justify-content: end;
+}
+
+/* ****************** */
+
+
+
+.time {
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.custom-input {
+    border: 1px solid #DDDDDD;
+    /* Border color */
+    padding: 5px;
+    /* Padding inside the input field */
+    border-radius: 5px;
+    /* Border radius to round the corners */
+    background-color: #DDDDDD;
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 375px) {
+    .custom-input {
+        padding: 5px;
+        /* Adjusted padding for 375px screens */
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .custom-input {
+        padding: 3px;
+        /* Adjusted padding for 320px screens */
+    }
+
+
+}
+
+.schedule_div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 4vw;
+    padding-left: 4vw;
+}
+
+
+#displayText {
+    display: none;
+    padding-bottom: 2vh;
+
+}
+
+#diffuser_container {
+    display: block;
+}
+
+#displayText2 {
+    display: none;
+padding-bottom: 2vh;
+}
+
+#smartled_container {
+    display: block;
+
+}
+
+.schedule {
+    padding-right: 4vw;
+    padding-left: 4vw;
+}
+
+.color {
+    padding-right: 4vw;
+    padding-left: 4vw;
+    font-weight: 700;
+    margin-bottom: 2vh;
+}
+
+.brightness1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 4vw;
+    padding-left: 4vw;
+}
+.brightness{
+    position: relative;
+    bottom: 7vh;
+    color: rgb(117, 112, 112);
+
+}
+.led_image{
+    margin-left: -1vw;
+}
+.low{
+    font-size: 2vh;
+    margin-bottom: 0vh;
+    margin-left: 10vw;
+}
+
+.high{
+    font-size: 2vh;
+    margin-bottom: 1vh;
+    margin-left: 10vw;
+
+}
+.smartled_title1{
+    font-weight: 700;
+    margin-top: .5vh;
+}
+#toggle_icon_expand{
+    display: none;
+    font-weight: 1000;
+}
+#toggle_icon_expand2{
+    display: none;
+}
+#toggle_icon{
+   font-weight:1000
+}
+#toggle_icon2{
+    font-weight:1000
+}
+#toggle_icon_expand2{
+    font-weight:1000
+}
+.schedule_ledtime1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.schedule_ledtime2 {
+    background-color: #000000;
+    color: white;
+    border-radius: 5px;
+   padding: .5vh;
+   border: none;
+   height: 30px;
+   width: 90px;
+   cursor: pointer;
+
+   
+}
+ .schedule_diffuser1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ .schedule_diffuser2{
+    background-color: #000000;
+    color: white;
+    border-radius: 5px;
+   padding: .5vh;
+   border: none;
+   height: 30px;
+   width: 90px;
+   
+}
+.music_div{
+    display: flex;
+    justify-content: center;
+
+}
+.evoluzn_logo{
+    text-align: center;
+    font-weight: 900;
+    font-size: large;
+    
+}
+.poweredby_evoluzn{
+    text-align: center;
+    font-weight: 600;
+    margin-top: auto;
+    font-size: 13px;
+}
